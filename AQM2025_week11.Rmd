@@ -1,8 +1,9 @@
 ---
 title: "AQM Week 11 -- Nested Data I"
 author: 
-  - Oliver Rittmann
-date: "May 16, 2024"
+  - Domantas Undzėnas
+  - Muhammad Muhammad
+date: "May 15|16, 2024"
 output:
   html_document:
     toc: true
