@@ -173,7 +173,7 @@ This is time-series cross-section data: We observe multiple elections in differe
 
 ![Nested Data (3)](images/nested3.png)
 
-Let's stop for a moment an think about why this straightfoward question may be difficult to answers based on the available data. Let's say that you find a correlation between citizen's happiness (`satislfe_survey_mean`) before an election and the electoral outcome (e.g. `vote_share_cab`). Would you consider this as strong evidence for the claim that happiness *causes* voters to vote for incumbent parties?
+Let's stop for a moment an think about why this straightfoward question may be difficult to answer based on the available data. Let's say that you find a correlation between citizen's happiness (`satislfe_survey_mean`) before an election and the electoral outcome (e.g. `vote_share_cab`). Would you consider this as strong evidence for the claim that happiness *causes* voters to vote for incumbent parties?
 
 Quite obviously, there may be ommitted confounding variables. Because the data structure is hierarchical, we can think of potential counfounders on the *country level (variables that vary between countries but not are constant over time)* and on the *election level (variables that vary within countries)*.
 
@@ -413,7 +413,7 @@ fe_1 <- lm(vote_share_cab ~ satislfe_survey_mean +
 summary(fe_1)
 ```
 
-At first glance, the effect size seems to be huge: One unit increase in average life satisfaction seems to lead to an 18 percentage points increase in cabinet vote share. But how plausibel is a one unit increase in average life satisfaction?
+At first glance, the effect size seems to be huge: One unit increase in average life satisfaction seems to lead to an 18 percentage points increase in cabinet vote share. But how plausible is a one unit increase in average life satisfaction?
 
 In an important article, [Mummolo and Peterson (PSRM, 2018)](https://www.cambridge.org/core/journals/political-science-research-and-methods/article/improving-the-interpretation-of-fixed-effects-regression-results/4145615389057E25D4B46D44AC9CB89C) point out that we must be very careful in specifying plausible changes in the independent variable when using fixed effects regression. 
 
