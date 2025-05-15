@@ -169,11 +169,11 @@ We have the following variables:
   + `cab_ideol_sd` = Gov Ideologial Disparity (Standard deviation of government party positions on left-right scale)
   + `ENEP_tmin1` = Party Fractionalisation - Last Election (Gallagher Fractionalization Index)
 
-This is time-series cross-section data: We observe multiple elections in different (european) countries, i.e. elections are nested in countries.
+This is time-series cross-section data: We observe multiple elections in different (European) countries, i.e. elections are nested in countries.
 
 ![Nested Data (3)](images/nested3.png)
 
-Let's stop for a moment an think about why this straightfoward question may be difficult to answer based on the available data. Let's say that you find a correlation between citizen's happiness (`satislfe_survey_mean`) before an election and the electoral outcome (e.g. `vote_share_cab`). Would you consider this as strong evidence for the claim that happiness *causes* voters to vote for incumbent parties?
+Let's stop for a moment an think about why this straightforward question may be difficult to answer based on the available data. Let's say that you find a correlation between citizen's happiness (`satislfe_survey_mean`) before an election and the electoral outcome (e.g. `vote_share_cab`). Would you consider this as strong evidence for the claim that happiness *causes* voters to vote for incumbent parties?
 
 Quite obviously, there may be ommitted confounding variables. Because the data structure is hierarchical, we can think of potential counfounders on the *country level (variables that vary between countries but not are constant over time)* and on the *election level (variables that vary within countries)*.
 
@@ -248,7 +248,7 @@ summary(fe_1)
 
 All that we do is to include $N - 1$ country dummies in the regression equation. Although quite simple, this is very powerful: 
 
-**By including country fixed effects, we implicitely account for all (unobserved) time-invariant country level confounding variables.** 
+**By including country fixed effects, we implicitly account for all (unobserved) time-invariant country level confounding variables.** 
 
 Or more generally:
 
@@ -301,7 +301,7 @@ abline(fe_coefs[1] + fe_coefs[5], fe_coefs[2],
 To estimate the model, we **only use the variation of x and y _within_ countries**. All variation _between_ countries is eliminated. This has advantages and disadvantages:
 
   + **Advantage**: Confounders that only vary between countries are of no more concern.
-  + **Disadvantage**: We loose all the higher level information. So if we were interested in why governing parties in country A seem to systematically receive more votes than governing parties in B, then we cannot answer them anymore as soon as we include country fixed effects.
+  + **Disadvantage**: We lose all the higher level information. So if we were interested in why governing parties in country A seem to systematically receive more votes than governing parties in B, then we cannot answer them anymore as soon as we include country fixed effects.
 
 ### Different ways to estimate the Fixed Effects Regression
 
@@ -417,7 +417,7 @@ At first glance, the effect size seems to be huge: One unit increase in average 
 
 In an important article, [Mummolo and Peterson (PSRM, 2018)](https://www.cambridge.org/core/journals/political-science-research-and-methods/article/improving-the-interpretation-of-fixed-effects-regression-results/4145615389057E25D4B46D44AC9CB89C) point out that we must be very careful in specifying plausible changes in the independent variable when using fixed effects regression. 
 
-Let's say we want to learn about the change in cabinet vote share when there is a one standard deviation increase in average life satisfaction. Because we by including country fixed effects we eliminated all between country variation of our variables, in order to calculate this standard deviation, we have to use the de-meaned variable of average live satisfaction. Otherwise it is possible that we calculate the first difference between two scenarios that would never plausibly occur *within* countries. 
+Let's say we want to learn about the change in cabinet vote share when there is a one standard deviation increase in average life satisfaction. Because by including country fixed effects we eliminated all between country variation of our variables, in order to calculate this standard deviation, we have to use the de-meaned variable of average live satisfaction. Otherwise it is possible that we calculate the first difference between two scenarios that would never plausibly occur *within* countries. 
 
 Let's have a look at the distribution of `satislfe_survey_mean` as well as it's de-meaned version.
 
